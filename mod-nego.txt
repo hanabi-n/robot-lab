@@ -1,0 +1,10 @@
+[*] 192.168.56.103 /index.html
+[*] 192.168.56.103 /index.php
+[*] 192.168.56.103 /intro.webm
+[*] 192.168.56.103 /readme.html
+[*] 192.168.56.103 /sitemap.xml
+[*] 192.168.56.103 /sitemap.xml.gz
+[*] 192.168.56.103 /xmlrpc.php
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+
