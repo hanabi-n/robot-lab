@@ -24,4 +24,15 @@ ZWxsaW90OkVSMjgtMDY1Mgo=
 11. /wp-login/   
      wordpress login page. password from /license.txt didn't help
 12. /wordpress
-    downloaded 2 files 
+    downloaded 2 files
+13. /wp-admin/wp-login.php
+    nothing
+14. /wordpresswp-admin/wp-login.php
+    nothing
+15. /blog/wp-login.php
+    nothing
+16. /wp-login.php
+    same
+17. /wordpresswp-login.php
+    nothing
+
