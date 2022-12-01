@@ -1,10 +1,10 @@
-1. Vulnerable for XSS
+1.Vulnerable for XSS
 2.MIME sniffing
 3.PHP 5.5.39
-4.
-  index.html - nothing
-  index.php - grep site
-  intro.webm - video
-  /readme.html - 'I like where you head is at. However Im not going to help you.'
+4.Using mod-negotiation Apache vulnerability. Got by metasploit 
+  /index.html - nothing
+  /index.php - grep site
+  /intro.webm - video
+  /readme.html - "I like where you head is at. However I'm not going to help you."
   /sitemap.xml - "XML Parsing Error: no root element found"
   /xmlrpc.php - "XML-RPC server accepts POST requests only."
