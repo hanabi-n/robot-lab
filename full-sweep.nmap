@@ -1,0 +1,28 @@
+# Nmap 7.91 scan initiated Thu Dec  1 04:40:36 2022 as: nmap -Pn -n -p 0-65535 -sV -A -oA full-sweep --min-rate 50000 --min-hostgroup 22 192.168.56.103
+Nmap scan report for 192.168.56.103
+Host is up (0.011s latency).
+Not shown: 65533 filtered ports
+PORT    STATE  SERVICE  VERSION
+22/tcp  closed ssh
+80/tcp  open   http     Apache httpd
+|_http-server-header: Apache
+|_http-title: Site doesn't have a title (text/html).
+443/tcp open   ssl/http Apache httpd
+|_http-server-header: Apache
+|_http-title: 400 Bad Request
+| ssl-cert: Subject: commonName=www.example.com
+| Not valid before: 2015-09-16T10:45:03
+|_Not valid after:  2025-09-13T10:45:03
+MAC Address: 08:00:27:84:3D:48 (Oracle VirtualBox virtual NIC)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.10 - 4.11
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   10.96 ms 192.168.56.103
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Dec  1 04:42:15 2022 -- 1 IP address (1 host up) scanned in 100.54 seconds

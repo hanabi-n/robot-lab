@@ -1,0 +1,4 @@
+# Nmap 7.91 scan initiated Thu Dec  1 04:40:36 2022 as: nmap -Pn -n -p 0-65535 -sV -A -oA full-sweep --min-rate 50000 --min-hostgroup 22 192.168.56.103
+Host: 192.168.56.103 ()	Status: Up
+Host: 192.168.56.103 ()	Ports: 22/closed/tcp//ssh///, 80/open/tcp//http//Apache httpd/, 443/open/tcp//ssl|http//Apache httpd/	Ignored State: filtered (65533)	OS: Linux 3.10 - 4.11	Seq Index: 260	IP ID Seq: All zeros
+# Nmap done at Thu Dec  1 04:42:15 2022 -- 1 IP address (1 host up) scanned in 100.54 seconds
