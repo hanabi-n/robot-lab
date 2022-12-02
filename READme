@@ -1,4 +1,4 @@
-1.Vulnerable for XSS
+1.Vulnerable for XSS 
 2.MIME sniffing
 3.PHP 5.5.39
 4.Using mod-negotiation Apache vulnerability. Got by metasploit 
@@ -8,10 +8,13 @@
   /readme.html - "I like where you head is at. However I'm not going to help you."
   /sitemap.xml - "XML Parsing Error: no root element found"
   /xmlrpc.php - "XML-RPC server accepts POST requests only."
-5. /admin/ - nothing
-6. /readme - same
-7. Wordpress version  <!-- generator="WordPress/4.3.1" -->
-8. /license.txt 
+5. 
+  /admin/ - nothing
+  /readme - same
+6. Wordpress version  <!-- generator="WordPress/4.3.1" -->
+7. 
+/license.txt 
+
 -------content of the page -------------------  
 what you do just pull code from Rapid9 or some s@#% since when did you become a script kitty?
 
@@ -19,21 +22,29 @@ do you want a password or something?
 
 ZWxsaW90OkVSMjgtMDY1Mgo=
 -----------------------------------------------
+
 9. /admin/index.html - nothing
 10. search
-11. /wp-login/   
+11. 
+    /wp-login/   
      wordpress login page. password from /license.txt didn't help
-12. /wordpress
+12. 
+    /wordpress
     downloaded 2 files
-13. /wp-admin/wp-login.php
+13. 
+    /wp-admin/wp-login.php
     nothing
-14. /wordpresswp-admin/wp-login.php
+14. 
+    /wordpresswp-admin/wp-login.php
     nothing
-15. /blog/wp-login.php
+15. 
+    /blog/wp-login.php
     nothing
-16. /wp-login.php
+16. 
+    /wp-login.php
     same
-17. /wordpresswp-login.php
+17. 
+    /wordpresswp-login.php
     nothing
 
 --------------enumeration--------------------
@@ -63,19 +74,19 @@ daemon@linux:/home/robot$ cat password.raw-md5
 cat password.raw-md5
 robot:c3fcd3d76192e4007dfb496cca67e13b
 
- also had error:
+also had error:
 
 daemon@linux:/home/robot$ sudo su                        
 sudo su
 sudo: no tty present and no askpass program specified
 
  
- fix it:
+fix it:
 
 python -c 'import pty; pty.spawn("/bin/sh")'
 
 
- hash -> password
+hash -> password
 
 abcdefghijklmnopqrstuvwxyz
 
