@@ -1,3 +1,20 @@
+References
+
+1.  Search vulnerabilities 
+https://charlesreid1.com/wiki/Metasploitable/Apache
+https://charlesreid1.com/wiki/Metasploitable/Apache/Python 
+
+2. Хотела это сделать, но не получилось
+https://www.hackingarticles.in/wordpress-reverse-shell/ 
+
+3. Hydra hacking 
+https://linuxhint.com/crack-web-based-login-page-with-hydra-in-kali-linux/ 
+
+4. Privilege escalation 
+https://gtfobins.github.io/gtfobins/nmap/
+
+
+
 1.Vulnerable for XSS
 2.MIME sniffing
 3.PHP 5.5.39
